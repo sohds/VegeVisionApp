@@ -1,0 +1,12 @@
+rottentomato
+rottenpotato
+rottenoranges
+rottencucumber
+rottenbanana
+rottenapples
+freshtomato
+freshpotato
+freshoranges
+freshcucumber
+freshbanana
+freshapples

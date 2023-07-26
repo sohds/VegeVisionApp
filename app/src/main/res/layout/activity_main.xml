@@ -65,7 +65,7 @@
 <!-- Camera -->
 
     <Button
-        android:id="@+id/CamerBtn"
+        android:id="@+id/CameraBtn"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:background="@drawable/shape_for_circle_button"
@@ -89,7 +89,7 @@
     <TextView
         android:layout_width="100dp"
         android:layout_height="40dp"
-        app:layout_constraintTop_toBottomOf="@id/CamerBtn"
+        app:layout_constraintTop_toBottomOf="@id/CameraBtn"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
         android:layout_marginTop="7dp"
@@ -105,7 +105,7 @@
 <!-- Gallery -->
 
     <Button
-        android:id="@+id/SelectBtn"
+        android:id="@+id/GalleryBtn"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_marginEnd="60dp"
@@ -128,7 +128,7 @@
     <TextView
         android:layout_width="100dp"
         android:layout_height="40dp"
-        app:layout_constraintTop_toBottomOf="@id/SelectBtn"
+        app:layout_constraintTop_toBottomOf="@id/GalleryBtn"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints"
         android:layout_marginTop="7dp"

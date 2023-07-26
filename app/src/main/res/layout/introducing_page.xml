@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Include the Toolbar -->
+    <include
+        layout="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/textView_1.1"
+        android:layout_width="210dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="24dp"
+        android:text="About us"
+        android:textSize="23sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="40dp" />
+
+    <TextView
+        android:id="@+id/textView_1.2"
+        android:layout_width="210dp"
+        android:layout_height="90dp"
+        android:layout_marginEnd="24dp"
+        android:text="VegeVision은, 소비자가 농산물을 사진을 통해 더블 체크하여 신선한 농산물을 소비할 수 있도록 도움을 주는 어플입니다."
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="80dp" />
+
+    <TextView
+        android:id="@+id/textView_2.1"
+        android:layout_width="210dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="24dp"
+        android:text="분류 가능한 농산물"
+        android:textSize="23sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="220dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView_2.2"
+        android:layout_width="210dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:text="토마토  |  바나나  |  감자  |\n사과  |  오렌지  |  오이  |"
+        android:textSize="15sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="260dp"
+        app:layout_constraintVertical_bias="0.477"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView_3.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Contact Info"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="500dp" />
+
+    <TextView
+        android:id="@+id/textView_3.2"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Team VV: vegevision@gmail.com"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="530dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

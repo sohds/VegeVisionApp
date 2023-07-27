@@ -1,113 +1,127 @@
 package com.example.vegevisionapp
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
-}package com.example.vegevisionapp
-
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
-import com.example.vegevisionapp.R
-import com.example.vegevisionapp.ml.LiteModelFinal
-import org.tensorflow.lite.DataType
-import org.tensorflow.lite.support.common.ops.NormalizeOp
-import org.tensorflow.lite.support.image.ImageProcessor
-import org.tensorflow.lite.support.image.TensorImage
-import org.tensorflow.lite.support.image.ops.ResizeOp
-import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import java.io.ByteArrayOutputStream
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var selectBtn: Button
-    lateinit var predBtn: Button
-    lateinit var resView: TextView
+    lateinit var GalleryBtn: Button
+    lateinit var CameraBtn: Button
     lateinit var imageView: ImageView
 
-    private var bitmap: Bitmap? = null
+    var bitmap: Bitmap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        selectBtn = findViewById(R.id.selectBtn)
-        predBtn = findViewById(R.id.predictBtn)
-        resView = findViewById(R.id.resView)
-        imageView = findViewById(R.id.imageView)
+        GalleryBtn = findViewById(R.id.GalleryBtn)
+        CameraBtn = findViewById(R.id.CameraBtn)
 
-        var labels = application.assets.open("label.txt").bufferedReader().readLines()
-
-        // ImageProcessor with preprocessing steps
-        var imageProcessor = ImageProcessor.Builder()
-            .add(ResizeOp(150, 150, ResizeOp.ResizeMethod.BILINEAR))
-            .add(NormalizeOp(0.0f, 1.0f)) // Rescale to [0.0, 1.0]
-            .build()
-
-        selectBtn.setOnClickListener {
-            var intent: Intent = Intent()
-            intent.setAction(Intent.ACTION_GET_CONTENT)
-            intent.setType("image/*")
-            startActivityForResult(intent, 100)
+        // GalleryBtn 클릭 이벤트 처리 - 갤러리 열기
+        GalleryBtn.setOnClickListener {
+            val intent = Intent(Intent.ACTION_GET_CONTENT)
+            intent.type = "image/*"
+            startActivityForResult(intent, REQUEST_IMAGE_GALLERY)
         }
 
-        predBtn.setOnClickListener {
-            if (bitmap != null) {
-                // Preprocess the selected image
-                var tensorImage = TensorImage(DataType.FLOAT32)
-                tensorImage.load(bitmap)
-                tensorImage = imageProcessor.process(tensorImage)
+        // CameraBtn 클릭 이벤트 처리 - 카메라 열기
+        CameraBtn.setOnClickListener {
+            requestCameraPermission()
+        }
+    }
 
-                val model = LiteModelFinal.newInstance(this)
+    private val REQUEST_GALLERY_PERMISSION = 1002
+    private val REQUEST_CAMERA_PERMISSION = 1003
+    private val REQUEST_IMAGE_GALLERY = 101
+    private val REQUEST_IMAGE_CAPTURE = 102
 
-                // Create inputs for reference
-                val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 150, 150, 3), DataType.FLOAT32)
-                inputFeature0.loadBuffer(tensorImage.buffer)
+    private fun requestCameraPermission() {
+        // 카메라 권한 요청
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.CAMERA
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.CAMERA),
+                REQUEST_CAMERA_PERMISSION
+            )
+        } else {
+            openCamera()
+        }
+    }
 
-                // Run model inference and get result
-                val outputs = model.process(inputFeature0)
-                val outputFeature0 = outputs.outputFeature0AsTensorBuffer.floatArray
+    private fun openCamera() {
+        // 카메라 열기
+        val intent = Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE)
+        startActivityForResult(intent, REQUEST_IMAGE_CAPTURE)
+    }
 
-                var maxIdx = 0
-                outputFeature0.forEachIndexed { index, fl ->
-                    if(outputFeature0[maxIdx] < fl) {
-                        maxIdx = index
-                    }
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode) {
+            REQUEST_CAMERA_PERMISSION -> {
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    openCamera()
+                } else {
+                    // 권한을 거부한 경우 처리
                 }
-
-                resView.setText(labels[maxIdx])
-                // Release model resources if no longer used.
-                model.close()
             }
         }
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == 100 && resultCode == RESULT_OK) {
-            var uri = data?.data
-            try {
-                val inputStream = uri?.let { contentResolver.openInputStream(it) }
-                bitmap = inputStream?.let { BitmapFactory.decodeStream(it) }
-                if (bitmap == null) {
-                    return
+        if (resultCode == RESULT_OK) {
+            when (requestCode) {
+                REQUEST_IMAGE_GALLERY -> {
+                    if (data != null && data.data != null) {
+                        val imageUri: Uri = data.data!!
+                        try {
+                            val inputStream = contentResolver.openInputStream(imageUri)
+                            bitmap = BitmapFactory.decodeStream(inputStream)
+                            if (bitmap == null) {
+                                return
+                            }
+                            imageView.setImageBitmap(bitmap)
+                        } catch (e: Exception) {
+                            e.printStackTrace()
+                        }
+                    }
                 }
-                imageView.setImageBitmap(bitmap) // Show the selected image in ImageView
-            } catch (e: Exception) {
-                e.printStackTrace()
+
+                REQUEST_IMAGE_CAPTURE -> {
+                    val imageBitmap = data?.extras?.get("data") as Bitmap
+                    bitmap = imageBitmap
+                    imageView.setImageBitmap(bitmap)
+                }
             }
+
+            // 결과 페이지로 이미지 데이터 넘기기
+            val resultIntent = Intent(this, MainActivity::class.java)
+            resultIntent.putExtra("imageData", bitmap?.let { bitmap ->
+                val stream = ByteArrayOutputStream()
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+                stream.toByteArray()
+            })
+            startActivity(resultIntent)
         }
     }
 }

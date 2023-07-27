@@ -16,17 +16,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VegeVisionApp">
 
+        <!-- MainActivity -->
         <activity android:name=".MainActivity"
+            android:exported="true">
+        </activity>
+
+        <!-- ResultActivity -->
+        <activity android:name=".ResultActivity"
+            android:exported="true" >
+        </activity>
+
+        <!-- AboutActivity -->
+        <activity
+            android:name=".AboutActivity"
+            android:exported="true">
+        </activity>
+
+        <!-- TipActivity -->
+        <activity
+            android:name=".TipActivity"
+            android:exported="true">
+        </activity>
+
+        <!-- OnboardingActivity -->
+        <activity
+            android:name=".OnboardingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ResultActivity"
-            android:exported="true" />
-
     </application>
-
 </manifest>

@@ -9,6 +9,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -20,6 +21,10 @@ class MainActivity : AppCompatActivity() {
     lateinit var CameraBtn: Button
     lateinit var imageView: ImageView
 
+    lateinit var AboutBtn: ImageButton
+    lateinit var homeButton: ImageButton
+    lateinit var TipBtn: ImageButton
+
     var bitmap: Bitmap? = null
 
 
@@ -29,6 +34,9 @@ class MainActivity : AppCompatActivity() {
 
         GalleryBtn = findViewById(R.id.GalleryBtn)
         CameraBtn = findViewById(R.id.CameraBtn)
+        AboutBtn = findViewById(R.id.imageButton2)
+        homeButton = findViewById(R.id.homebutton)
+        TipBtn = findViewById(R.id.imageButton8)
 
 
         // GalleryBtn 클릭 이벤트 처리 - 갤러리 열기
@@ -41,6 +49,23 @@ class MainActivity : AppCompatActivity() {
         // CameraBtn 클릭 이벤트 처리 - 카메라 열기
         CameraBtn.setOnClickListener {
             requestCameraPermission()
+        }
+
+        // AboutBtn 클릭 이벤트 처리 - AboutActivity로 이동
+        AboutBtn.setOnClickListener {
+            val intent = Intent(this, AboutActivity::class.java)
+            startActivity(intent)
+        }
+
+        // homeButton 클릭 이벤트 처리 - MainActivity(현재 액티비티)로 이동 (또는 아무 동작 안 하게 설정)
+        homeButton.setOnClickListener {
+            // Do nothing or you can add custom behavior here
+        }
+
+        // TipBtn 클릭 이벤트 처리 - TipActivity로 이동
+        TipBtn.setOnClickListener {
+            val intent = Intent(this, TipActivity::class.java)
+            startActivity(intent)
         }
     }
 

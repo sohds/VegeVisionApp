@@ -1,5 +1,6 @@
 package com.example.vegevisionapp
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
@@ -22,8 +23,13 @@ class ResultActivity : AppCompatActivity() {
 
     lateinit var imageView: ImageView
     lateinit var resView: TextView
+
     lateinit var button: Button
     lateinit var backButton: ImageButton
+
+    lateinit var AboutBtn: ImageButton
+    lateinit var homeButton: ImageButton
+    lateinit var TipBtn: ImageButton
 
     // 클래스 레벨에 bitmap 변수를 선언
     var bitmap: Bitmap? = null
@@ -34,8 +40,27 @@ class ResultActivity : AppCompatActivity() {
 
         imageView = findViewById(R.id.imageView2)
         resView = findViewById(R.id.textView2)
+
         button = findViewById(R.id.button)
         backButton = findViewById(R.id.imageButton)
+
+
+        // AboutBtn 클릭 이벤트 처리 - AboutActivity로 이동
+        AboutBtn.setOnClickListener {
+            val intent = Intent(this, AboutActivity::class.java)
+            startActivity(intent)
+        }
+
+        // homeButton 클릭 이벤트 처리 - MainActivity(현재 액티비티)로 이동 (또는 아무 동작 안 하게 설정)
+        homeButton.setOnClickListener {
+            // Do nothing or you can add custom behavior here
+        }
+
+        // TipBtn 클릭 이벤트 처리 - TipActivity로 이동
+        TipBtn.setOnClickListener {
+            val intent = Intent(this, TipActivity::class.java)
+            startActivity(intent)
+        }
 
         // Select 페이지에서 넘겨준 이미지 데이터를 받기
         val imageData: ByteArray? = intent.getByteArrayExtra("imageData")

@@ -14,12 +14,14 @@
         android:layout_height="72dp"
         android:scaleType="centerCrop"
         android:src="@drawable/logo_vege"
+        android:tint="@color/green_2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.969" />
+        app:layout_constraintVertical_bias="0.969"
+        tools:ignore="UseAppTint" />
 
     <ImageButton
         android:id="@+id/homebutton"
@@ -27,12 +29,14 @@
         android:layout_height="73dp"
         android:scaleType="centerCrop"
         android:src="@drawable/homebutton4"
+        android:tint="@color/green_main"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.968" />
+        app:layout_constraintVertical_bias="0.968"
+        tools:ignore="UseAppTint" />
 
     <ImageButton
         android:id="@+id/imageButton8"
@@ -40,12 +44,13 @@
         android:layout_height="72dp"
         android:scaleType="centerCrop"
         android:src="@drawable/category1"
-        android:tint="#018145"
+        android:tint="@color/green_2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.907"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971" />
+        app:layout_constraintVertical_bias="0.971"
+        tools:ignore="UseAppTint" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

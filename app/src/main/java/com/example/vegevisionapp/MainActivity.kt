@@ -1,5 +1,15 @@
 package com.example.vegevisionapp
 
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+}package com.example.vegevisionapp
+
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

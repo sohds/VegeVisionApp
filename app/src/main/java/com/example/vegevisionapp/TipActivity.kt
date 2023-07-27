@@ -2,7 +2,9 @@ package com.example.vegevisionapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class TipActivity : AppCompatActivity() {
@@ -10,6 +12,7 @@ class TipActivity : AppCompatActivity() {
     lateinit var AboutBtn: ImageButton
     lateinit var homeButton: ImageButton
     lateinit var TipBtn: ImageButton
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

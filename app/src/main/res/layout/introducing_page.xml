@@ -7,11 +7,31 @@
     android:layout_height="match_parent">
 
     <!-- Include the Toolbar -->
-    <include
+   <!-- <include
         layout="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"/> -->
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vege Vision"
+            android:textSize="26sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+    </androidx.appcompat.widget.Toolbar>
 
 
     <TextView
@@ -23,7 +43,7 @@
         android:textSize="23sp"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="40dp" />
+        tools:layout_editor_absoluteY="110dp" />
 
     <TextView
         android:id="@+id/textView_1.2"
@@ -34,7 +54,7 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="80dp" />
+        tools:layout_editor_absoluteY="145dp" />
 
     <TextView
         android:id="@+id/textView_2.1"
@@ -43,8 +63,8 @@
         android:layout_marginEnd="24dp"
         android:text="분류 가능한 농산물"
         android:textSize="23sp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="220dp"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="280dp"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -54,8 +74,8 @@
         android:layout_marginStart="24dp"
         android:text="토마토  |  바나나  |  감자  |\n사과  |  오렌지  |  오이  |"
         android:textSize="15sp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="260dp"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="320dp"
         app:layout_constraintVertical_bias="0.477"
         tools:ignore="MissingConstraints" />
 
@@ -83,5 +103,28 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="530dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="142dp"
+        android:layout_height="390dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/vv"
+        tools:layout_editor_absoluteY="-20dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="142dp"
+        android:layout_height="358dp"
+        android:layout_marginStart="244dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/introducingpage_picture"
+        tools:layout_editor_absoluteY="145dp"
+        tools:ignore="MissingConstraints" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

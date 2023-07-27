@@ -25,28 +25,28 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="serif"
-        android:text="Vege Vision"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/timesnewroman"
+        android:text="VegeVision"
         android:textColor="@color/white"
-        android:textSize="36sp"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="156dp"
-        android:layout_height="26dp"
+        android:layout_width="141dp"
+        android:layout_height="27dp"
+        android:fontFamily="@font/timesnewroman"
         android:text="Click the apple"
         android:textColor="@color/yellow_1"
         android:textSize="23dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.723" />
+        app:layout_constraintVertical_bias="0.731" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

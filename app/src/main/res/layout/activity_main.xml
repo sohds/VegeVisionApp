@@ -28,7 +28,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Vege Vision"
+            android:text="VegeVision"
+            android:fontFamily="@font/timesnewroman"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
             android:textSize="26sp" />
@@ -67,6 +68,12 @@
         app:layout_constraintVertical_bias="0.968"
         tools:ignore="UseAppTint" />
 
+
+    <!-- Camera -->
+
+
+    <!-- Gallery -->
+
     <ImageButton
         android:id="@+id/imageButton8"
         android:layout_width="79dp"
@@ -77,98 +84,64 @@
         android:tint="@color/green_2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintHorizontal_bias="0.879"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971"
+        app:layout_constraintVertical_bias="0.964"
         tools:ignore="UseAppTint" />
-
-
-    <TextView
-        android:id="@+id/SelectPhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="Select Photo"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="@+id/homebutton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.178" />
-
-
-    <!-- Camera -->
-
-
-    <!-- Gallery -->
 
     <TextView
         android:id="@+id/explanation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:fontFamily="@font/notosanskr_regular"
         android:gravity="center"
         android:text="농산물 사진을 갤러리에서 업로드하거나\n카메라로 찍어주세요!"
         android:textAppearance="?android:textAppearanceSmall"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.277"
+        app:layout_constraintVertical_bias="0.295"
         tools:ignore="MissingConstraints"
         tools:layout_marginTop="8dp" />
 
-    <Button
-        android:id="@+id/CameraBtn"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:background="@drawable/shape_for_circle_button"
-        android:elevation="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.215"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.546"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:layout_width="73dp"
-        android:layout_height="73dp"
-        android:layout_gravity="top|start"
-        android:layout_marginStart="-7dp"
-        android:layout_marginTop="-5dp"
-        android:elevation="4dp"
-        android:src="@drawable/camera_white"
+    <TextView
+        android:id="@+id/SelectPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/timesnewroman"
+        android:gravity="center"
+        android:text="Select Photo"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@+id/homebutton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.251"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.56"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.216"
+        />
 
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="7dp"
-        android:gravity="center"
-        android:text="카메라"
-        android:textColor="@color/black"
-        android:textSize="23sp"
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="69dp"
+        android:layout_height="69dp"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="-10dp"
+        android:elevation="4dp"
+        android:src="@drawable/gallery_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintHorizontal_bias="0.705"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/CameraBtn"
-        app:layout_constraintVertical_bias="0.016"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.523"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -180,45 +153,80 @@
         android:elevation="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.744"
+        app:layout_constraintHorizontal_bias="0.73"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.544"
+        app:layout_constraintVertical_bias="0.528"
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="69dp"
-        android:layout_height="69dp"
+        android:id="@+id/imageView4"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
         android:layout_gravity="top|start"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="-15dp"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="-5dp"
         android:elevation="4dp"
-        android:src="@drawable/gallery_white"
+        android:src="@drawable/camera_white"
+        app:layout_constraintBottom_toBottomOf="@+id/homebutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.235"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.548"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/CameraBtn"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:background="@drawable/shape_for_circle_button"
+        android:elevation="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.716"
+        app:layout_constraintHorizontal_bias="0.199"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537"
+        app:layout_constraintVertical_bias="0.53"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="12dp"
+        android:layout_width="101dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="27dp"
         android:layout_marginTop="70dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/notosanskr_light"
         android:gravity="center"
         android:text="갤러리"
         android:textColor="@color/black"
         android:textSize="23sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.752"
+        app:layout_constraintHorizontal_bias="0.754"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.637"
+        app:layout_constraintVertical_bias="0.636"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="104dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="43dp"
+        android:fontFamily="@font/notosanskr_light"
+        android:gravity="center"
+        android:text="카메라"
+        android:textColor="@color/black"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.706"
         tools:ignore="MissingConstraints" />
 
 

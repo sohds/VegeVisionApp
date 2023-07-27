@@ -5,8 +5,10 @@ import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.vegevisionapp.R
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.support.common.FileUtil
@@ -21,6 +23,10 @@ class ResultActivity : AppCompatActivity() {
     lateinit var imageView: ImageView
     lateinit var resView: TextView
     lateinit var button: Button
+    lateinit var backButton: ImageButton
+
+    // 클래스 레벨에 bitmap 변수를 선언
+    var bitmap: Bitmap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,20 +35,28 @@ class ResultActivity : AppCompatActivity() {
         imageView = findViewById(R.id.imageView2)
         resView = findViewById(R.id.textView2)
         button = findViewById(R.id.button)
+        backButton = findViewById(R.id.imageButton)
 
         // Select 페이지에서 넘겨준 이미지 데이터를 받기
         val imageData: ByteArray? = intent.getByteArrayExtra("imageData")
         if (imageData != null) {
-            val bitmap = BitmapFactory.decodeByteArray(imageData, 0, imageData.size)
+            bitmap = BitmapFactory.decodeByteArray(imageData, 0, imageData.size)
             imageView.setImageBitmap(bitmap)
 
             // 이미지 분류 모델을 사용하여 결과를 얻는 함수 호출 및 결과 표시
-            val result = classifyImage(bitmap)
-            resView.text = result
+//            val result = classifyImage(bitmap!!)
+//            resView.text = result
         }
 
         // 버튼 클릭 리스너 설정
         button.setOnClickListener {
+            // 이미지 분류 모델을 사용하여 결과를 얻는 함수 호출 및 결과 표시
+            val result = bitmap?.let { classifyImage(it) }
+            resView.text = result
+        }
+
+        // back 버튼 클릭 리스너 설정
+        backButton.setOnClickListener {
             // 이전 액티비티로 돌아가기
             onBackPressed()
         }

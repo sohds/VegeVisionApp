@@ -22,12 +22,14 @@ class MainActivity : AppCompatActivity() {
 
     var bitmap: Bitmap? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         GalleryBtn = findViewById(R.id.GalleryBtn)
         CameraBtn = findViewById(R.id.CameraBtn)
+
 
         // GalleryBtn 클릭 이벤트 처리 - 갤러리 열기
         GalleryBtn.setOnClickListener {
@@ -100,7 +102,6 @@ class MainActivity : AppCompatActivity() {
                             if (bitmap == null) {
                                 return
                             }
-                            imageView.setImageBitmap(bitmap)
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
@@ -110,12 +111,11 @@ class MainActivity : AppCompatActivity() {
                 REQUEST_IMAGE_CAPTURE -> {
                     val imageBitmap = data?.extras?.get("data") as Bitmap
                     bitmap = imageBitmap
-                    imageView.setImageBitmap(bitmap)
                 }
             }
 
             // 결과 페이지로 이미지 데이터 넘기기
-            val resultIntent = Intent(this, MainActivity::class.java)
+            val resultIntent = Intent(this, ResultActivity::class.java)
             resultIntent.putExtra("imageData", bitmap?.let { bitmap ->
                 val stream = ByteArrayOutputStream()
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)

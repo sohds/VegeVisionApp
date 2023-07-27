@@ -24,7 +24,7 @@ class ResultActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_result)
+        setContentView(R.layout.page_result)
 
         imageView = findViewById(R.id.imageView2)
         resView = findViewById(R.id.textView2)

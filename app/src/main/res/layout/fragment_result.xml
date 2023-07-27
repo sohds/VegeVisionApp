@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".result_right">
+    tools:context=".ResultActivity">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -111,7 +111,7 @@
         android:layout_height="72dp"
         android:scaleType="centerCrop"
         android:src="@drawable/category1"
-        android:tint="#018145"
+        app:tint="#018145"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.907"

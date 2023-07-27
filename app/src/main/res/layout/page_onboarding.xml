@@ -12,6 +12,7 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginBottom="150dp"
+        android:background="#00FFFFFF"
         android:scaleType="centerCrop"
         android:src="@drawable/logo_vege"
         android:tint="#FFFFFF"
@@ -28,7 +29,7 @@
         android:fontFamily="serif"
         android:text="Vege Vision"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="@+id/imageView"
@@ -36,13 +37,16 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="96dp"
-        android:layout_height="25dp"
+        android:layout_width="156dp"
+        android:layout_height="26dp"
         android:text="Click the apple"
         android:textColor="@color/yellow_1"
+        android:textSize="23dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="439dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.723" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

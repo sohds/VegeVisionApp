@@ -43,7 +43,9 @@ class ResultActivity : AppCompatActivity() {
 
         button = findViewById(R.id.button)
         backButton = findViewById(R.id.imageButton)
-
+        homeButton = findViewById(R.id.homebutton)
+        AboutBtn = findViewById(R.id.imageButton2)
+        TipBtn = findViewById(R.id.imageButton8)
 
         // AboutBtn 클릭 이벤트 처리 - AboutActivity로 이동
         AboutBtn.setOnClickListener {
@@ -51,9 +53,10 @@ class ResultActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // homeButton 클릭 이벤트 처리 - MainActivity(현재 액티비티)로 이동 (또는 아무 동작 안 하게 설정)
+        // homeButton 클릭 이벤트 처리 - MainActivity로 이동
         homeButton.setOnClickListener {
-            // Do nothing or you can add custom behavior here
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
 
         // TipBtn 클릭 이벤트 처리 - TipActivity로 이동

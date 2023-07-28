@@ -38,6 +38,12 @@
             android:exported="true">
         </activity>
 
+        <!-- LoginActivity -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+        </activity>
+
         <!-- OnboardingActivity -->
         <activity
             android:name=".OnboardingActivity"

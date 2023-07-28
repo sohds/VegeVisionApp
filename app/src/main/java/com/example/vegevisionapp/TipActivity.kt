@@ -4,13 +4,12 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.ImageButton
+import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import java.io.ByteArrayOutputStream
 
-class TipActivity : AppCompatActivity() {
+class TipActivity : BaseActivity() {
 
     lateinit var AboutBtn: ImageButton
     lateinit var homeButton: ImageButton
@@ -24,15 +23,22 @@ class TipActivity : AppCompatActivity() {
     lateinit var Peach: ImageButton
 
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tips_page)
 
-        AboutBtn = findViewById(R.id.imageButton2)
-        homeButton = findViewById(R.id.homebutton)
+        // 마이페이지로 이동하는 이미지 버튼 클릭 리스너 설정
+        val btnMyPage = findViewById<ImageButton>(R.id.mypage_image)
+        btnMyPage.setOnClickListener {
+            if (AppPreferences.getInstance(this).isLoggedIn) {
+                // 로그인된 상태에서는 마이페이지로 이동
+                val intent = Intent(this, MyPageActivity::class.java)
+                startActivity(intent)
+            } else {
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
+        }
+
 
         Beansprouts = findViewById(R.id.beansprouts)
         Carrot = findViewById(R.id.carrot)
@@ -44,20 +50,10 @@ class TipActivity : AppCompatActivity() {
         Peach=findViewById(R.id.peach)
 
 
-        // AboutBtn 클릭 이벤트 처리 - AboutActivity로 이동
-        AboutBtn.setOnClickListener {
-            val intent = Intent(this, AboutActivity::class.java)
-            startActivity(intent)
 
-        }
+        // 각 농산물 버튼별 이벤트 처리
 
-        // homeButton 클릭 이벤트 처리 - MainActivity로 이동
-        homeButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
-
+        // Beansprout 클릭 이벤트 처리 - 콩나물 신선도 기준으로 이동
         Beansprouts.setOnClickListener {
             val beansproutimage = BitmapFactory.decodeResource(resources, R.drawable.beansprouts)
             val intent1 =Intent(this,TipsForVeges::class.java)
@@ -66,6 +62,8 @@ class TipActivity : AppCompatActivity() {
             intent1.putExtra("image", bitmapToByteArray(beansproutimage))
             startActivity(intent1)
         }
+
+        // Carrot 클릭 이벤트 처리 - 당근 신선도 기준으로 이동
         Carrot.setOnClickListener {
             val carrotimage = BitmapFactory.decodeResource(resources, R.drawable.carrot)
             val intent2 =Intent(this,TipsForVeges::class.java)
@@ -75,6 +73,7 @@ class TipActivity : AppCompatActivity() {
             startActivity(intent2)
         }
 
+        // Cabbage 클릭 이벤트 처리 - 양배추 신선도 기준으로 이동
         Cabbage.setOnClickListener {
             val cabbageimage = BitmapFactory.decodeResource(resources, R.drawable.cabbage)
             val intent3 =Intent(this,TipsForVeges::class.java)
@@ -84,6 +83,7 @@ class TipActivity : AppCompatActivity() {
             startActivity(intent3)
         }
 
+        // Onion 클릭 이벤트 처리 - 양파 신선도 기준으로 이동
         Onion.setOnClickListener {
             val onionimage = BitmapFactory.decodeResource(resources, R.drawable.onion)
             val intent4 =Intent(this,TipsForVeges::class.java)
@@ -93,6 +93,7 @@ class TipActivity : AppCompatActivity() {
             startActivity(intent4)
         }
 
+        // Grape 클릭 이벤트 처리 - 포도 신선도 기준으로 이동
         Grape.setOnClickListener {
             val grapeimage = BitmapFactory.decodeResource(resources, R.drawable.grape)
             val intent5 =Intent(this,TipsForVeges::class.java)
@@ -102,6 +103,7 @@ class TipActivity : AppCompatActivity() {
             startActivity(intent5)
         }
 
+        // SweetPotato 클릭 이벤트 처리 - 고구마 신선도 기준으로 이동
         SweetPotato.setOnClickListener {
             val sweetpotatoimage = BitmapFactory.decodeResource(resources, R.drawable.sweetpotato)
             val intent6 =Intent(this,TipsForVeges::class.java)
@@ -110,6 +112,8 @@ class TipActivity : AppCompatActivity() {
             intent6.putExtra("image", bitmapToByteArray(sweetpotatoimage))
             startActivity(intent6)
         }
+
+        // Watermelon 클릭 이벤트 처리 - 수박 신선도 기준으로 이동
         Watermelon.setOnClickListener {
             val watermelonimage = BitmapFactory.decodeResource(resources, R.drawable.watermelon)
             val intent7 =Intent(this,TipsForVeges::class.java)
@@ -118,6 +122,8 @@ class TipActivity : AppCompatActivity() {
             intent7.putExtra("image", bitmapToByteArray(watermelonimage))
             startActivity(intent7)
         }
+
+        // Peach 클릭 이벤트 처리 - 복숭아 신선도 기준으로 이동
         Peach.setOnClickListener {
             val peachimage = BitmapFactory.decodeResource(resources, R.drawable.peach)
             val intent8 =Intent(this,TipsForVeges::class.java)
@@ -127,6 +133,7 @@ class TipActivity : AppCompatActivity() {
             startActivity(intent8)
         }
     }
+
     private fun bitmapToByteArray(bitmap: Bitmap): ByteArray {
         val stream = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)

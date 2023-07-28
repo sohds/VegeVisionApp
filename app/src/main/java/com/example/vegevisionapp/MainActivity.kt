@@ -11,11 +11,12 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import java.io.ByteArrayOutputStream
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     lateinit var GalleryBtn: Button
     lateinit var CameraBtn: Button
@@ -31,6 +32,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // 마이페이지로 이동하는 이미지 버튼 클릭 리스너 설정
+        val btnMyPage = findViewById<ImageButton>(R.id.mypage_image)
+        btnMyPage.setOnClickListener {
+            if (AppPreferences.getInstance(this).isLoggedIn) {
+                // 로그인된 상태에서는 마이페이지로 이동
+                val intent = Intent(this, MyPageActivity::class.java)
+                startActivity(intent)
+            } else {
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
+        }
 
         GalleryBtn = findViewById(R.id.GalleryBtn)
         CameraBtn = findViewById(R.id.CameraBtn)

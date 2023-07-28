@@ -1,21 +1,15 @@
 package com.example.vegevisionapp
 
-import android.content.Context
-import android.content.Intent
-import android.database.sqlite.SQLiteDatabase
-import android.database.sqlite.SQLiteOpenHelper
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import org.w3c.dom.Text
 
 class TipsForVeges: AppCompatActivity() {
 
 
-    public lateinit var tips: TextView
-    var writingtext: String? = null
+    lateinit var tips: TextView
     lateinit var imageOf:ImageView
 
 

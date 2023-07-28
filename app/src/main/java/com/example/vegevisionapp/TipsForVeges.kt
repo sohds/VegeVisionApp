@@ -20,7 +20,9 @@ class TipsForVeges: AppCompatActivity() {
         setContentView(R.layout.toolbar)
 
         tips = findViewById<TextView>(R.id.fruitTips)
+
     }
+
 
         inner class myDBHelper(context: Context):SQLiteOpenHelper(context,"groupDB",null,1){
             override fun onCreate(db: SQLiteDatabase?) {

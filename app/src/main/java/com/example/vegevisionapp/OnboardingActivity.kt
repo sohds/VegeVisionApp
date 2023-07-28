@@ -17,7 +17,7 @@ class OnboardingActivity : AppCompatActivity() {
 
         // AboutBtn 클릭 이벤트 처리 - AboutActivity로 이동 (현재 액티비티)
         AppleBtn.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
     }

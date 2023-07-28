@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "468532207888",
+    "project_id": "vegevisionapp",
+    "storage_bucket": "vegevisionapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468532207888:android:5abaa92f7675be413e4595",
+        "android_client_info": {
+          "package_name": "com.example.vegevisionapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468532207888-jqgj07oia8jmq58tabia0defc6g6sq0u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUubiEgMEHSNuNMF_MZZTI2ZjumnUDLQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468532207888-jqgj07oia8jmq58tabia0defc6g6sq0u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/timesnewroman"
-            android:text="Vege Vision"
+            android:text="VegeVision"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
             android:textSize="26sp" />
@@ -29,16 +29,18 @@
     </androidx.appcompat.widget.Toolbar>
 
 
-           <!-- bottom button -->
+    <!-- bottom button -->
 
     <ImageButton
         android:id="@+id/imageButton2"
-        android:layout_width="76dp"
-        android:layout_height="73dp"
-        android:background="#FFFFFF"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="280dp"
+        android:layout_marginBottom="630dp"
+        android:background="#00FFFFFF"
         android:scaleType="fitCenter"
         android:src="@drawable/logo_vege"
-        android:tint="@color/green_2"
+        android:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.116"
@@ -49,12 +51,14 @@
 
     <ImageButton
         android:id="@+id/homebutton"
-        android:layout_width="80dp"
-        android:layout_height="73dp"
-        android:background="#FFFFFF"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="350dp"
+        android:layout_marginBottom="630dp"
+        android:background="#00FFFFFF"
         android:scaleType="centerCrop"
         android:src="@drawable/homebutton4"
-        android:tint="@color/green_main"
+        android:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -78,7 +82,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.971"
         tools:ignore="UseAppTint" />
-
 
     <!-- Scroll View -->
 
@@ -207,9 +210,6 @@
 
         </LinearLayout>
     </ScrollView>
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

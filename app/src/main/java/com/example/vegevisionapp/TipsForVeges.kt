@@ -1,18 +1,21 @@
 package com.example.vegevisionapp
 
 import android.content.Context
+import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import org.w3c.dom.Text
 
 class TipsForVeges: AppCompatActivity() {
 
 
-    lateinit var tips: TextView
-    lateinit var myHelper: myDBHelper
-    lateinit var sqlDB:SQLiteDatabase
+    public lateinit var tips: TextView
+    var writingtext: String? = null
+    lateinit var imageOf:ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,19 +23,20 @@ class TipsForVeges: AppCompatActivity() {
         setContentView(R.layout.toolbar)
 
         tips = findViewById<TextView>(R.id.fruitTips)
+        imageOf = findViewById<ImageView>(R.id.imageViewOf)
 
-    }
+        val newText1 = intent.getStringExtra("newText")
 
 
-        inner class myDBHelper(context: Context):SQLiteOpenHelper(context,"groupDB",null,1){
-            override fun onCreate(db: SQLiteDatabase?) {
-                db!!.execSQL("CREATE TABLE groupTBL(fruit CHAR(8) PRIMARY KEY, tips String);")
-            }
+        val buttonType = intent.getStringExtra("buttonType")
 
-            override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {
-             db!!.execSQL("DROP TABLE IF EXISTS groupTBL")
-            }
+        if (buttonType == "beansprouts") {
+            tips.text = newText1
+        } else if (buttonType == "carrot") {
+            tips.text = newText1
+
         }
 
+    }
 
 }

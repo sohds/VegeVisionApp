@@ -32,6 +32,12 @@
             android:exported="true">
         </activity>
 
+        <!--TipsForVegesActivity-->
+        <activity
+            android:name=".TipsForVeges"
+            android:exported="true">
+        </activity>
+
         <!-- TipActivity -->
         <activity
             android:name=".TipActivity"

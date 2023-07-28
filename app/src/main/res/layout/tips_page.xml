@@ -107,6 +107,7 @@
                 android:paddingTop="30dp">
 
                 <ImageButton
+                    android:id="@+id/beansprouts"
                     android:layout_width="0dp"
                     android:layout_height="150dp"
                     android:layout_weight="1"
@@ -117,6 +118,7 @@
 
 
                 <ImageButton
+                    android:id="@+id/carrot"
                     android:layout_width="0dp"
                     android:layout_height="150dp"
                     android:layout_weight="1"
@@ -135,6 +137,7 @@
                 android:paddingTop="20dp">
 
                 <ImageButton
+                    android:id="@+id/cabbage"
                     android:layout_width="0dp"
                     android:layout_height="150dp"
                     android:layout_weight="1"
@@ -144,6 +147,7 @@
                     android:padding="20dp" />
 
                 <ImageButton
+                    android:id="@+id/onion"
                     android:layout_width="0dp"
                     android:layout_height="150dp"
                     android:layout_weight="1"
@@ -162,6 +166,7 @@
                 android:paddingTop="20dp">
 
                 <ImageButton
+                    android:id="@+id/grape"
                     android:layout_width="0dp"
                     android:layout_height="150dp"
                     android:layout_weight="1"
@@ -171,6 +176,7 @@
                     android:padding="20dp" />
 
                 <ImageButton
+                    android:id="@+id/sweetpotato"
                     android:layout_width="0dp"
                     android:layout_height="150dp"
                     android:layout_weight="1"
@@ -189,6 +195,7 @@
                 android:paddingTop="20dp">
 
                 <ImageButton
+                    android:id="@+id/watermelon"
                     android:layout_width="0dp"
                     android:layout_height="150dp"
                     android:layout_weight="1"
@@ -198,6 +205,7 @@
                     android:padding="20dp" />
 
                 <ImageButton
+                    android:id="@+id/peach"
                     android:layout_width="0dp"
                     android:layout_height="150dp"
                     android:layout_weight="1"

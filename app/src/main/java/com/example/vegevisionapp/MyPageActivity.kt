@@ -4,6 +4,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -12,10 +13,10 @@ import com.google.firebase.auth.FirebaseAuth
 
 class MyPageActivity : BaseActivity() {
 
-    lateinit var emailshow: TextView
-    lateinit var logoutBtn: Button
-    lateinit var deleteBtn: Button
-    lateinit var auth: FirebaseAuth
+    private lateinit var emailshow: TextView
+    private lateinit var logoutBtn: Button
+    private lateinit var deleteBtn: Button
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +32,11 @@ class MyPageActivity : BaseActivity() {
         logoutBtn.setOnClickListener {
             //firebase auth에서 sign out 기능 호출
             auth.signOut()
-            var intent = Intent(this@MyPageActivity, LoginActivity::class.java)
+
+            // 로그인 상태를 false로 변경
+            AppPreferences.getInstance(this).isLoggedIn = false
+
+            val intent = Intent(this@MyPageActivity, LoginActivity::class.java)
             startActivity(intent)
             showToast("로그아웃 했습니다.")
         }
@@ -49,7 +54,7 @@ class MyPageActivity : BaseActivity() {
                             val currentUser = auth.currentUser
                             if (currentUser == null) {
                                 // 회원 탈퇴 성공적으로 완료됨
-                                var intent = Intent(this@MyPageActivity, OnboardingActivity::class.java)
+                                val intent = Intent(this@MyPageActivity, OnboardingActivity::class.java)
                                 startActivity(intent)
                                 showToast("탈퇴했어요. 우리 다음에 또 볼 수 있겠죠?")
                                 finishAfterDelay(3500) // 3.5초 뒤에 앱 종료
@@ -76,6 +81,7 @@ class MyPageActivity : BaseActivity() {
     }
 
     private fun finishAfterDelay(delayMillis: Long) {
-        Handler().postDelayed({ finish() }, delayMillis)
+        Handler(Looper.getMainLooper()).postDelayed({ finish() }, delayMillis)
+
     }
 }

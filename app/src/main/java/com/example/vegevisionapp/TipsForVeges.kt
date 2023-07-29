@@ -1,7 +1,9 @@
 package com.example.vegevisionapp
 
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -15,13 +17,25 @@ class TipsForVeges: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.custom_toolbar)
+        setContentView(R.layout.tips_result)
 
-        tips = findViewById<TextView>(R.id.fruitTips)
-        imageOf = findViewById<ImageView>(R.id.imageViewOf)
+        // 마이페이지로 이동하는 이미지 버튼 클릭 리스너 설정
+        val btnMyPage = findViewById<ImageButton>(R.id.mypage_image)
+        btnMyPage.setOnClickListener {
+            if (AppPreferences.getInstance(this).isLoggedIn) {
+                // 로그인된 상태에서는 마이페이지로 이동
+                val intent = Intent(this, MyPageActivity::class.java)
+                startActivity(intent)
+            } else {
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
+        }
+
+        tips = findViewById(R.id.fruitTips)
+        imageOf = findViewById(R.id.imageViewOf)
 
         //인텐트를 받아오는 작업
-        var intent = getIntent()
+        val intent = getIntent()
         val newText = intent.getStringExtra("newText")
         val buttonType = intent.getStringExtra("buttonType")
         val byteArray = intent.getByteArrayExtra("image")

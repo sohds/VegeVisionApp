@@ -5,14 +5,10 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.widget.ImageButton
-import android.widget.Toolbar
-import androidx.appcompat.app.AppCompatActivity
 import java.io.ByteArrayOutputStream
 
 class TipActivity : BaseActivity() {
 
-    lateinit var AboutBtn: ImageButton
-    lateinit var homeButton: ImageButton
     lateinit var Beansprouts: ImageButton
     lateinit var Carrot: ImageButton
     lateinit var Cabbage: ImageButton
@@ -21,7 +17,6 @@ class TipActivity : BaseActivity() {
     lateinit var SweetPotato: ImageButton
     lateinit var Watermelon: ImageButton
     lateinit var Peach: ImageButton
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

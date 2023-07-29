@@ -15,6 +15,62 @@
 
     <include layout="@layout/custom_toolbar" />
 
+
+    <!-- About Us -->
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="130dp"
+        android:layout_height="153dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="412dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.152"
+        app:srcCompat="@drawable/vv"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView_1.1"
+        android:layout_width="210dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/timesnewroman"
+        android:text="About us"
+        android:textSize="30dp"
+        android:textColor="#404040"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.145"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView_1.2"
+        android:layout_width="217dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/notosanskr_regular"
+        android:text="VegeVision은, 소비자가 농산물을 사진을 통해 더블 체크하여 신선한 농산물을 소비할 수 있도록 도움을 주는 어플입니다."
+        android:textSize="15sp"
+        android:textColor="#404040"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.218"
+        tools:ignore="MissingConstraints" />
+
+
+    <!-- 분류 가능한 농산물 -->
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="139dp"
@@ -30,23 +86,6 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView_2.2"
-        android:layout_width="220dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="-10dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/notosanskr_regular"
-        android:text="토마토  |  바나나  |  감자  |\n사과  |  오렌지  |  오이  |"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.288"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
         android:id="@+id/textView_2.1"
         android:layout_width="211dp"
         android:layout_height="51dp"
@@ -54,6 +93,7 @@
         android:fontFamily="@font/notosanskr_regular"
         android:text="분류 가능한 농산물"
         android:textSize="23sp"
+        android:textColor="#404040"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.276"
@@ -63,18 +103,39 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:id="@+id/textView_2.2"
+        android:layout_width="220dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="-5dp"
+        android:fontFamily="@font/notosanskr_regular"
+        android:text="토마토, 바나나, 감자, 사과,\n오렌지, 오이"
+        android:textSize="15sp"
+        android:textColor="#404040"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.288"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.54"
+        tools:ignore="MissingConstraints" />
+
+
+
+    <TextView
         android:id="@+id/textView5"
         android:layout_width="256dp"
         android:layout_height="59dp"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/notosanskr_regular"
         android:text="2022111746 오서연 2017111294 이유진 2022111738 박서진 20221111729 김유빈"
+        android:textSize="13sp"
+        android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806" />
+        app:layout_constraintVertical_bias="0.816" />
 
     <TextView
         android:id="@+id/textView_3.1"
@@ -109,52 +170,11 @@
         app:layout_constraintVertical_bias="0.739"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="130dp"
-        android:layout_height="153dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="412dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.152"
-        app:srcCompat="@drawable/vv"
-        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView_1.1"
-        android:layout_width="210dp"
-        android:layout_height="30dp"
-        android:fontFamily="@font/timesnewroman"
-        android:text="About us"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.82"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.149"
-        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView_1.2"
-        android:layout_width="217dp"
-        android:layout_height="116dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/notosanskr_regular"
-        android:text="VegeVision은, 소비자가 농산물을 사진을 통해 더블 체크하여 신선한 농산물을 소비할 수 있도록 도움을 주는 어플입니다."
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.846"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.218"
-        tools:ignore="MissingConstraints" />
+
+
+
 
     <ImageButton
         android:id="@+id/imageButton2"

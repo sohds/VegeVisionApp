@@ -18,10 +18,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/timesnewroman"
             android:text="Vege Vision"
-            android:textSize="26sp"
+            android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
-            android:layout_gravity="center"/>
+            android:textSize="26sp"
+            tools:layout_editor_absoluteX="138dp"
+            tools:layout_editor_absoluteY="10dp" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -31,7 +35,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="24dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"

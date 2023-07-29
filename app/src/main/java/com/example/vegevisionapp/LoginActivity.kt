@@ -26,26 +26,26 @@ class LoginActivity : AppCompatActivity() {
         loginBtn = findViewById(R.id.loginBtn)
 
         loginBtn.setOnClickListener {
-            var email = emailEt.text.toString()
-            var password = passwordEt.text.toString()
-            auth.createUserWithEmailAndPassword(email,password) // 회원 가입
-                .addOnCompleteListener {
-                        result ->
-                    if(result.isSuccessful){
-                        Toast.makeText(this,"회원가입이 완료되었습니다.",Toast.LENGTH_SHORT).show()
-                        if(auth.currentUser!=null){
-                            var intent = Intent(this, MainActivity::class.java)
+            val email = emailEt.text.toString()
+            val password = passwordEt.text.toString()
+
+            if (email.isEmpty() || password.isEmpty()) {
+                // 이메일 또는 비밀번호가 비어있을 경우
+                Toast.makeText(this, "이메일 또는 비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
+            } else {
+                auth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener { result ->
+                        if (result.isSuccessful) {
+                            Toast.makeText(this, "회원가입이 완료되었습니다.", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
+                        } else {
+                            login(email, password)
                         }
                     }
-                    else if(result.exception?.message.isNullOrEmpty()){
-                        Toast.makeText(this,"오류가 발생했습니다.",Toast.LENGTH_SHORT).show()
-                    }
-                    else{
-                        login(email,password)
-                    }
-                }
+            }
         }
+
     }
 
     fun login(email:String, password:String){
@@ -53,8 +53,11 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener {
                     result->
                 if(result.isSuccessful){
-                    var intent = Intent(this, MainActivity::class.java)
+                    Toast.makeText(this,"로그인 성공",Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
+
+                    finish() // 로그인 액티비티 종료
                 }
             }
     }

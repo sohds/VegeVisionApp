@@ -15,7 +15,7 @@ class TipsForVeges: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.toolbar)
+        setContentView(R.layout.custom_toolbar)
 
         tips = findViewById<TextView>(R.id.fruitTips)
         imageOf = findViewById<ImageView>(R.id.imageViewOf)

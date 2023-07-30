@@ -54,7 +54,7 @@ class MyPageActivity : BaseActivity() {
                             val currentUser = auth.currentUser
                             if (currentUser == null) {
                                 // 회원 탈퇴 성공적으로 완료됨
-                                val intent = Intent(this@MyPageActivity, OnboardingActivity::class.java)
+                                val intent = Intent(this@MyPageActivity, StartActivity::class.java)
                                 startActivity(intent)
                                 showToast("탈퇴했어요. 우리 다음에 또 볼 수 있겠죠?")
                                 finishAfterDelay(4000) // 4초 뒤에 앱 종료

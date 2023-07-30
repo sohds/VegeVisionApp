@@ -6,10 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Include the Toolbar -->
     <include
         android:id="@+id/include2"
         layout="@layout/custom_toolbar" />
 
+    <!-- SelectTipsText -->
     <TextView
         android:id="@+id/fruitTips"
         android:layout_width="300dp"
@@ -29,6 +31,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewOf" />
 
+    <!-- VegetableImage -->
     <ImageView
         android:id="@+id/imageViewOf"
         android:layout_width="300dp"

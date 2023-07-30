@@ -8,9 +8,6 @@
     <include layout="@layout/custom_toolbar" />
 
 
-    <!-- bottom button -->
-
-
     <!-- Scroll View -->
 
     <ScrollView

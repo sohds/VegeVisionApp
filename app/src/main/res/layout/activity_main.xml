@@ -10,6 +10,9 @@
 
     <include layout="@layout/custom_toolbar" />
 
+    <!-- DefaultBtn -->
+
+    <!-- AboutVegevisonBtn -->
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="76dp"
@@ -26,6 +29,7 @@
         app:layout_constraintVertical_bias="0.967"
         tools:ignore="UseAppTint" />
 
+    <!-- MainpageBtn -->
     <ImageButton
         android:id="@+id/homebutton"
         android:layout_width="80dp"
@@ -43,11 +47,7 @@
         tools:ignore="UseAppTint" />
 
 
-    <!-- Camera -->
-
-
-    <!-- Gallery -->
-
+    <!-- TipspageBtn -->
     <ImageButton
         android:id="@+id/imageButton8"
         android:layout_width="79dp"
@@ -64,6 +64,7 @@
         app:layout_constraintVertical_bias="0.964"
         tools:ignore="UseAppTint" />
 
+    <!-- ExplanationForUsingApp -->
     <TextView
         android:id="@+id/explanation"
         android:layout_width="wrap_content"
@@ -119,6 +120,7 @@
         app:layout_constraintVertical_bias="0.523"
         tools:ignore="MissingConstraints" />
 
+    <!-- GalleryBtn -->
     <Button
         android:id="@+id/GalleryBtn"
         android:layout_width="110dp"
@@ -152,6 +154,7 @@
         app:layout_constraintVertical_bias="0.548"
         tools:ignore="MissingConstraints" />
 
+    <!-- CameraBtn -->
     <Button
         android:id="@+id/CameraBtn"
         android:layout_width="110dp"
@@ -185,6 +188,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.636"
         tools:ignore="MissingConstraints" />
+
 
     <TextView
         android:layout_width="104dp"

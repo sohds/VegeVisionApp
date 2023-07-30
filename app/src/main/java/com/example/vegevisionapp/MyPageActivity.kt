@@ -57,7 +57,7 @@ class MyPageActivity : BaseActivity() {
                                 val intent = Intent(this@MyPageActivity, OnboardingActivity::class.java)
                                 startActivity(intent)
                                 showToast("탈퇴했어요. 우리 다음에 또 볼 수 있겠죠?")
-                                finishAfterDelay(3500) // 3.5초 뒤에 앱 종료
+                                finishAfterDelay(4000) // 4초 뒤에 앱 종료
                             } else {
                                 // 로그인 상태라면 실패 메시지 띄우기
                                 showToast("회원 탈퇴를 실패했습니다.")

@@ -51,9 +51,9 @@
             android:exported="true">
         </activity>
 
-        <!-- OnboardingActivity -->
+        <!-- StartActivity -->
         <activity
-            android:name=".OnboardingActivity"
+            android:name=".StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -3,22 +3,20 @@ package com.example.vegevisionapp
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
-import android.widget.Toolbar
-import androidx.appcompat.app.AppCompatActivity
 
 class AboutActivity : BaseActivity() {
 
-    lateinit var AboutBtn: ImageButton
+    lateinit var aboutBtn: ImageButton
     lateinit var homeButton: ImageButton
-    lateinit var TipBtn: ImageButton
+    lateinit var tipBtn: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.introducing_page)
 
-        AboutBtn = findViewById(R.id.imageButton2)
+        aboutBtn = findViewById(R.id.imageButton2)
         homeButton = findViewById(R.id.homebutton)
-        TipBtn = findViewById(R.id.imageButton8)
+        tipBtn = findViewById(R.id.imageButton8)
 
         // BaseActivity에서 protected로 구현된 툴바 변수 btnMyPage
         btnMyPage.setOnClickListener {
@@ -32,7 +30,7 @@ class AboutActivity : BaseActivity() {
         }
 
         // AboutBtn 클릭 이벤트 처리 - AboutActivity로 이동 (현재 액티비티)
-        AboutBtn.setOnClickListener {
+        aboutBtn.setOnClickListener {
             val intent = Intent(this, AboutActivity::class.java)
             startActivity(intent)
         }
@@ -44,7 +42,7 @@ class AboutActivity : BaseActivity() {
         }
 
         // TipBtn 클릭 이벤트 처리 - TipActivity로 이동
-        TipBtn.setOnClickListener {
+        tipBtn.setOnClickListener {
             val intent = Intent(this, TipActivity::class.java)
             startActivity(intent)
         }

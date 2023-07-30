@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="0dp">
 
     <include
         android:id="@+id/include"
@@ -77,9 +79,9 @@
         android:layout_marginTop="15dp"
         android:ems="10"
         android:fontFamily="@font/timesnewroman"
+        android:hint="test@test.com"
         android:inputType="text"
         android:text=""
-        android:hint="test@test.com"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/editpw"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,25 +108,30 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <!-- PW EditText -->
-    <EditText
+    <!-- PW TextInput 비밀번호 입력하는 것을 가리기 위함 -->
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editpw"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="-40dp"
         android:layout_marginBottom="308dp"
-        android:ems="10"
         android:fontFamily="@font/timesnewroman"
-        android:inputType="text"
-        android:text=""
         android:hint="password"
-        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/include"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.593"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editid"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/timesnewroman"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/loginBtn"

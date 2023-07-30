@@ -11,7 +11,7 @@ class OnboardingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.page_onboarding)
+        setContentView(R.layout.start_page)
 
         AppleBtn = findViewById(R.id.imageView)
 

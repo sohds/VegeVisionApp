@@ -20,7 +20,7 @@ class MyPageActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.mypage)
+        setContentView(R.layout.my_page)
 
         emailshow = findViewById(R.id.mypage_email)
         logoutBtn = findViewById(R.id.logoutBtn)

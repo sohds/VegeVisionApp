@@ -1,6 +1,5 @@
 package com.example.vegevisionapp
 
-import android.content.Intent
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

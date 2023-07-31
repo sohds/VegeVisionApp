@@ -25,7 +25,7 @@ Python으로 CNN 모델을 MobileNetV2로 전이학습시켜 신선한 농산물
 ## 📌 주요 기능
 
 #### 시작 페이지
-- OnboardingActivity.kt, page_onboadrding.xml
+- StartActivity.kt, start_page.xml
 - 앱 구동하면 제일 먼저 나오는 화면
 - 사과버튼을 눌러야 다음 화면으로 넘어감
 
@@ -33,8 +33,12 @@ Python으로 CNN 모델을 MobileNetV2로 전이학습시켜 신선한 농산물
 - LoginActivity.kt, login_page.xml
 - firebase와 연동
 - 이메일과 패스워드 입력
+  - 비밀번호 입력 시, 보안을 위해 '*' 표시로 입력됨 (비밀번호는 정상적으로 입력) 
+  - 이메일이나 패스워드 입력 받지 못했을 경우, '이메일 또는 비밀번호를 입력해주세요.' 토스트 메시지 출력 (로그인 실패)
   - DB에 없는 이메일과 패스워드일 경우, 자동 회원가입 후 로그인
+  - 패스워드가 6자리 미만일 시, '최소 6자리 이상이어야 합니다.' 토스트 메시지 출력 (회원가입 실패)
   - DB에 있는 이메일과 패스워드일 경우, 로그인
+  - 비밀번호가 틀렸을 경우, '비밀번호가 틀렸습니다.' 토스트 메시지 출력 (로그인 실패)
 
 #### 사진 분류
 - MainActivity.kt, activity.xml (사진 업로드) / ResultActivity.kt, page_result.xml (결과)

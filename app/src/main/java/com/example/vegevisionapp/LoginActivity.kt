@@ -59,23 +59,38 @@ class LoginActivity : AppCompatActivity() {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener { result ->
                         if (result.isSuccessful) {
+                            // 로그인 성공
                             Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
                             val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
                             finish() // 로그인 액티비티 종료
                         } else {
-                            // 로그인 실패 시 오류 메시지 확인
-                            val error = result.exception?.message
-                            if (error == "The password is invalid or the user does not have a password.") {
-                                // 비밀번호가 틀린 경우
-                                Toast.makeText(this, "비밀번호가 틀렸습니다.", Toast.LENGTH_SHORT).show()
-                            } else {
-                                // 기타 로그인 실패 사유
-                                Toast.makeText(this, "로그인 실패: $error", Toast.LENGTH_SHORT).show()
-                            }
+                            // 로그인 실패 시 회원가입 진행
+                            createUserAndLogin(email, password)
                         }
                     }
             }
         }
+    }
+
+    private fun createUserAndLogin(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener { result ->
+                if (result.isSuccessful) {
+                    // 회원가입 및 로그인 성공
+                    Toast.makeText(this, "회원가입 및 로그인 성공", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish() // 로그인 액티비티 종료
+                } else {
+                    // 로그인 실패 시 회원가입 진행
+                    if (result.exception?.message?.contains("Password should be at least 6 characters") == true) {
+                        Toast.makeText(this, "비밀번호는 최소 6자리 이상이어야 합니다.", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // 회원가입 실패
+                        Toast.makeText(this, "회원가입 실패: ${result.exception?.message}", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
     }
 }

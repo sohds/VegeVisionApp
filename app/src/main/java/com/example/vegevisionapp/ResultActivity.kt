@@ -26,9 +26,9 @@ class ResultActivity : AppCompatActivity() {
     lateinit var button: Button
     lateinit var backButton: ImageButton
 
-    lateinit var AboutBtn: ImageButton
+    lateinit var aboutBtn: ImageButton
     lateinit var homeButton: ImageButton
-    lateinit var TipBtn: ImageButton
+    lateinit var tipBtn: ImageButton
 
     // 클래스 레벨에 bitmap 변수를 선언
     var bitmap: Bitmap? = null
@@ -43,11 +43,11 @@ class ResultActivity : AppCompatActivity() {
         button = findViewById(R.id.button)
         backButton = findViewById(R.id.imageButton)
         homeButton = findViewById(R.id.homebutton)
-        AboutBtn = findViewById(R.id.imageButton2)
-        TipBtn = findViewById(R.id.imageButton8)
+        aboutBtn = findViewById(R.id.imageButton2)
+        tipBtn = findViewById(R.id.imageButton8)
 
         // AboutBtn 클릭 이벤트 처리 - AboutActivity로 이동
-        AboutBtn.setOnClickListener {
+        aboutBtn.setOnClickListener {
             val intent = Intent(this, AboutActivity::class.java)
             startActivity(intent)
         }
@@ -59,7 +59,7 @@ class ResultActivity : AppCompatActivity() {
         }
 
         // TipBtn 클릭 이벤트 처리 - TipActivity로 이동
-        TipBtn.setOnClickListener {
+        tipBtn.setOnClickListener {
             val intent = Intent(this, TipActivity::class.java)
             startActivity(intent)
         }

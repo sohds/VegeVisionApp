@@ -31,6 +31,7 @@
             android:textSize="26sp" />
 
         <!-- MyPageBtn -->
+        <!-- 버튼 도저히 눌리지 않아 삭제함
         <ImageButton
             android:id="@+id/mypage_image"
             android:layout_width="40dp"
@@ -48,6 +49,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.967"
             tools:ignore="UseAppTint" />
+            -->
 
     </androidx.appcompat.widget.Toolbar>
 

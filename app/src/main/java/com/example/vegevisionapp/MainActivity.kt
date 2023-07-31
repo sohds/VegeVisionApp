@@ -10,18 +10,19 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import java.io.ByteArrayOutputStream
 
-class MainActivity : BaseActivity() {
+class MainActivity : AppCompatActivity() {
 
-    lateinit var GalleryBtn: Button
-    lateinit var CameraBtn: Button
+    lateinit var galleryBtn: Button
+    lateinit var cameraBtn: Button
 
-    lateinit var AboutBtn: ImageButton
+    lateinit var aboutBtn: ImageButton
     lateinit var homeButton: ImageButton
-    lateinit var TipBtn: ImageButton
+    lateinit var tipBtn: ImageButton
 
     var bitmap: Bitmap? = null
 
@@ -30,38 +31,27 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        GalleryBtn = findViewById(R.id.GalleryBtn)
-        CameraBtn = findViewById(R.id.CameraBtn)
-        AboutBtn = findViewById(R.id.imageButton2)
+        galleryBtn = findViewById(R.id.GalleryBtn)
+        cameraBtn = findViewById(R.id.CameraBtn)
+        aboutBtn = findViewById(R.id.imageButton2)
         homeButton = findViewById(R.id.homebutton)
-        TipBtn = findViewById(R.id.imageButton8)
+        tipBtn = findViewById(R.id.imageButton8)
 
 
-        // BaseActivity에서 protected로 구현된 툴바 변수 btnMyPage
-        btnMyPage.setOnClickListener {
-            if (AppPreferences.getInstance(this).isLoggedIn) {
-                // 로그인된 상태에서는 마이페이지로 이동
-                val intent = Intent(this, MyPageActivity::class.java)
-                startActivity(intent)
-            } else {
-                startActivity(Intent(this, LoginActivity::class.java))
-            }
-        }
-
-        // GalleryBtn 클릭 이벤트 처리 - 갤러리 열기
-        GalleryBtn.setOnClickListener {
+        // galleryBtn 클릭 이벤트 처리 - 갤러리 열기
+        galleryBtn.setOnClickListener {
             val intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "image/*"
             startActivityForResult(intent, REQUEST_IMAGE_GALLERY)
         }
 
-        // CameraBtn 클릭 이벤트 처리 - 카메라 열기
-        CameraBtn.setOnClickListener {
+        // cameraBtn 클릭 이벤트 처리 - 카메라 열기
+        cameraBtn.setOnClickListener {
             requestCameraPermission()
         }
 
-        // AboutBtn 클릭 이벤트 처리 - AboutActivity로 이동
-        AboutBtn.setOnClickListener {
+        // aboutBtn 클릭 이벤트 처리 - AboutActivity로 이동
+        aboutBtn.setOnClickListener {
             val intent = Intent(this, AboutActivity::class.java)
             startActivity(intent)
         }
@@ -72,8 +62,8 @@ class MainActivity : BaseActivity() {
             startActivity(intent)
         }
 
-        // TipBtn 클릭 이벤트 처리 - TipActivity로 이동
-        TipBtn.setOnClickListener {
+        // tipBtn 클릭 이벤트 처리 - TipActivity로 이동
+        tipBtn.setOnClickListener {
             val intent = Intent(this, TipActivity::class.java)
             startActivity(intent)
         }

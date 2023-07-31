@@ -1,12 +1,12 @@
 package com.example.vegevisionapp
 
-import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
-class TipsForVeges: BaseActivity() {
+class TipsForVeges: AppCompatActivity() {
 
     lateinit var tips: TextView
     lateinit var imageOf:ImageView
@@ -19,16 +19,6 @@ class TipsForVeges: BaseActivity() {
         tips = findViewById(R.id.fruitTips)
         imageOf = findViewById(R.id.imageViewOf)
 
-        // BaseActivity에서 protected로 구현된 툴바 변수 btnMyPage
-        btnMyPage.setOnClickListener {
-            if (AppPreferences.getInstance(this).isLoggedIn) {
-                // 로그인된 상태에서는 마이페이지로 이동
-                val intent = Intent(this, MyPageActivity::class.java)
-                startActivity(intent)
-            } else {
-                startActivity(Intent(this, LoginActivity::class.java))
-            }
-        }
 
         // 인텐트를 받아오는 작업
         val intent = getIntent()

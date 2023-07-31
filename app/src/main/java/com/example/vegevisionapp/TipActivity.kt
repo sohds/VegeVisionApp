@@ -5,9 +5,10 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
 import java.io.ByteArrayOutputStream
 
-class TipActivity : BaseActivity() {
+class TipActivity : AppCompatActivity() {
 
     lateinit var beansprouts: ImageButton
     lateinit var carrot: ImageButton
@@ -30,18 +31,6 @@ class TipActivity : BaseActivity() {
         sweetpotato = findViewById(R.id.sweetpotato)
         watermelon = findViewById(R.id.watermelon)
         peach = findViewById(R.id.peach)
-
-
-        // BaseActivity에서 protected로 구현된 툴바 변수 btnMyPage
-        btnMyPage.setOnClickListener {
-            if (AppPreferences.getInstance(this).isLoggedIn) {
-                // 로그인된 상태에서는 마이페이지로 이동
-                val intent = Intent(this, MyPageActivity::class.java)
-                startActivity(intent)
-            } else {
-                startActivity(Intent(this, LoginActivity::class.java))
-            }
-        }
 
 
         // 각 농산물 버튼별 이벤트 처리

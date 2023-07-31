@@ -9,11 +9,12 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 
-class MyPageActivity : BaseActivity() {
+class MyPageActivity : AppCompatActivity() {
 
-    private lateinit var emailshow: TextView
+    private lateinit var emailShow: TextView
     private lateinit var logoutBtn: Button
     private lateinit var deleteBtn: Button
     private lateinit var auth: FirebaseAuth
@@ -22,12 +23,12 @@ class MyPageActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.my_page)
 
-        emailshow = findViewById(R.id.mypage_email)
+        emailShow = findViewById(R.id.mypage_email)
         logoutBtn = findViewById(R.id.logoutBtn)
         deleteBtn = findViewById(R.id.button2)
 
         auth = FirebaseAuth.getInstance()
-        emailshow.text = auth.currentUser?.email
+        emailShow.text = auth.currentUser?.email
 
         logoutBtn.setOnClickListener {
             //firebase auth에서 sign out 기능 호출

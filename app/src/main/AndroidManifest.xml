@@ -50,6 +50,11 @@
             android:name=".LoginActivity"
             android:exported="true">
         </activity>
+        <!-- MyPageActivity -->
+        <activity
+            android:name=".MyPageActivity"
+            android:exported="true">
+        </activity>
 
         <!-- StartActivity -->
         <activity

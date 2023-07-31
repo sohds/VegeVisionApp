@@ -40,8 +40,8 @@ class TipActivity : AppCompatActivity() {
             val beansproutimage = BitmapFactory.decodeResource(resources, R.drawable.beansprouts)
             val intent1 =Intent(this, TipsForVeges::class.java)
             intent1.putExtra("buttonType", "beansprouts")
-            intent1.putExtra("newText","콩나물은 머리와 줄기가 적당히 통통하고 노란색을 띠며,\n 검은 반점이 없는 것을 골라야 한다. \n" +
-                    " 줄기 부분이 너무 통통하거나 잔뿌리가 전혀 없이 깨끗한 콩나물은\n 성장촉진제를 많이 사용했을 가능성이 있으므로 주의한다. \n" +
+            intent1.putExtra("newText","콩나물은 머리와 줄기가 적당히 통통하고 노란색을 띠며,\n 검은 반점이 없는 것을 골라야 한다." +
+                    " 줄기 부분이 너무 통통하거나 잔뿌리가 전혀 없이 깨끗한 콩나물은\n 성장촉진제를 많이 사용했을 가능성이 있으므로 주의한다. " +
                     "콩 머리가 파란 것은 햇빛에 많이 노출된 콩나물로 독성이 있을 수 있으며, 검은 반점이 있는 콩나물은 상했을 가능성이 높으므로 피해야 한다.")
             intent1.putExtra("image", bitmapToByteArray(beansproutimage))
             startActivity(intent1)

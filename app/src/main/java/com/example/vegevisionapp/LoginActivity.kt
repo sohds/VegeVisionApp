@@ -62,6 +62,7 @@ class LoginActivity : AppCompatActivity() {
                             // 로그인 성공
                             Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
                             val intent = Intent(this, MainActivity::class.java)
+                            AppPreferences.getInstance(this).isLoggedIn = true
                             startActivity(intent)
                             finish() // 로그인 액티비티 종료
                         } else {
@@ -86,6 +87,7 @@ class LoginActivity : AppCompatActivity() {
                     // 회원가입 및 로그인 성공
                     Toast.makeText(this, "회원가입 및 로그인 성공", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, MainActivity::class.java)
+                    AppPreferences.getInstance(this).isLoggedIn = true
                     startActivity(intent)
                     finish() // 로그인 액티비티 종료
                 } else {

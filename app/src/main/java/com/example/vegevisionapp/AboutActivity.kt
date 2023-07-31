@@ -10,7 +10,7 @@ class AboutActivity : AppCompatActivity() {
     lateinit var aboutBtn: ImageButton
     lateinit var homeButton: ImageButton
     lateinit var tipBtn: ImageButton
-    lateinit var mypageBtn: ImageButton
+    lateinit var myPageBtn: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,13 +19,11 @@ class AboutActivity : AppCompatActivity() {
         aboutBtn = findViewById(R.id.imageButton2)
         homeButton = findViewById(R.id.homebutton)
         tipBtn = findViewById(R.id.imageButton8)
-        mypageBtn = findViewById(R.id.)
+        myPageBtn = findViewById(R.id.imageButton3)
 
 
         // AboutBtn 클릭 이벤트 처리 - AboutActivity로 이동 (현재 액티비티)
         aboutBtn.setOnClickListener {
-            val intent = Intent(this, AboutActivity::class.java)
-            startActivity(intent)
         }
 
         // homeButton 클릭 이벤트 처리 - MainActivity로 이동
@@ -42,12 +40,13 @@ class AboutActivity : AppCompatActivity() {
 
         // myPageBtn 클릭 이벤트 처리 - MyPageActivity로 이동
         myPageBtn.setOnClickListener {
-            if(AppPreferences.getInstance(this).isLoggedIn) {
+            if (AppPreferences.getInstance(this).isLoggedIn) {
                 // 로그인된 상태에서는 마이페이지로 이동
                 val intent = Intent(this, MyPageActivity::class.java)
                 startActivity(intent)
             } else {
-            startActivity(Intent(this, LoginActivity::class.java))
-        } }
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
+        }
     }
 }

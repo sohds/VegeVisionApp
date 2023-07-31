@@ -65,8 +65,14 @@ class LoginActivity : AppCompatActivity() {
                             startActivity(intent)
                             finish() // 로그인 액티비티 종료
                         } else {
-                            // 로그인 실패 시 회원가입 진행
-                            createUserAndLogin(email, password)
+                            // if-else로 계정이 없는 경우와 비밀번호가 틀린 경우 처리
+                            if (result.exception?.message?.contains("The password is invalid") == true) {
+                                // 비밀번호가 틀린 경우
+                                Toast.makeText(this, "비밀번호가 틀렸습니다.", Toast.LENGTH_SHORT).show()
+                            } else {
+                                // 계정이 없는 경우 또는 기타 로그인 실패 사유
+                                createUserAndLogin(email, password)
+                            }
                         }
                     }
             }
@@ -83,7 +89,7 @@ class LoginActivity : AppCompatActivity() {
                     startActivity(intent)
                     finish() // 로그인 액티비티 종료
                 } else {
-                    // 로그인 실패 시 회원가입 진행
+                    // 비밀번호 6자리 미만 입력 시
                     if (result.exception?.message?.contains("Password should be at least 6 characters") == true) {
                         Toast.makeText(this, "비밀번호는 최소 6자리 이상이어야 합니다.", Toast.LENGTH_SHORT).show()
                     } else {

@@ -53,6 +53,7 @@ Python으로 CNN 모델을 MobileNetV2로 전이학습시켜 신선한 농산물
 - 스크롤 제공
 
 #### 마이 페이지 (로그아웃 및 회원 탈퇴)
+- MyPageActivity.kt
 - 로그인한 이메일 계정 show
 - 로그아웃
 - 회원 탈퇴

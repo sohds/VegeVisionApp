@@ -24,12 +24,12 @@ Python으로 CNN 모델을 MobileNetV2로 전이학습시켜 신선한 농산물
 
 ## 📌 주요 기능
 
-#### 시작 페이지
+#### 시작 페이지  - <a href="https://github.com/sohds/VegeVisionApp/wiki/%EB%B6%80%EA%B0%80-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(%EC%8B%9C%EC%9E%91-%ED%8E%98%EC%9D%B4%EC%A7%80)" >상세보기 - WIKI 이동</a>
 - StartActivity.kt, start_page.xml
 - 앱 구동하면 제일 먼저 나오는 화면
 - 사과버튼을 눌러야 다음 화면으로 넘어감
 
-#### 로그인 및 회원가입
+#### 로그인 및 회원가입  - <a href="https://github.com/sohds/VegeVisionApp/wiki/%EB%B6%80%EA%B0%80-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(%EB%A1%9C%EA%B7%B8%EC%9D%B8)" >상세보기 - WIKI 이동</a>
 - LoginActivity.kt, login_page.xml
 - firebase와 연동
 - 이메일과 패스워드 입력
@@ -47,12 +47,12 @@ Python으로 CNN 모델을 MobileNetV2로 전이학습시켜 신선한 농산물
 - 신선도 결과 체크 페이지
 - 딥러닝 모델 활용
 
-#### 신선도 기준 제공
+#### 신선도 기준 제공 - <a href="https://github.com/sohds/VegeVisionApp/wiki/%EB%B6%80%EA%B0%80-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(%EC%8B%A0%EC%84%A0%EB%8F%84-%EA%B8%B0%EC%A4%80-%EC%A0%9C%EA%B3%B5)" >상세보기 - WIKI 이동</a>
 - TipActivity.kt (농산물 고르기) / TipsforVeges.kt (결과)
 - 딥러닝 모델에 학습시키지 않은 농산물의 신선도 기준을 제공
 - 스크롤 제공
 
-#### 마이 페이지 (로그아웃 및 회원 탈퇴)
+#### 마이 페이지 (로그아웃 및 회원 탈퇴)  - <a href="https://github.com/sohds/VegeVisionApp/wiki/%EB%B6%80%EA%B0%80-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80)" >상세보기 - WIKI 이동</a>
 - MyPageActivity.kt
 - 로그인한 이메일 계정 show
 - 로그아웃

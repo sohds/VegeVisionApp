@@ -47,12 +47,12 @@ Python으로 CNN 모델을 MobileNetV2로 전이학습시켜 신선한 농산물
 - 신선도 결과 체크 페이지
 - 딥러닝 모델 활용
 
-#### 신선도 기준 제공
+#### 신선도 기준 제공 - <a href="https://github.com/sohds/VegeVisionApp/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(%EC%82%AC%EC%A7%84-%EB%B6%84%EB%A5%98)" >상세보기 - WIKI 이동</a>
 - TipActivity.kt (농산물 고르기) / TipsforVeges.kt (결과)
 - 딥러닝 모델에 학습시키지 않은 농산물의 신선도 기준을 제공
 - 스크롤 제공
 
-#### 마이 페이지 (로그아웃 및 회원 탈퇴)
+#### 마이 페이지 (로그아웃 및 회원 탈퇴) - <a href="https://github.com/sohds/VegeVisionApp/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(%EC%82%AC%EC%A7%84-%EB%B6%84%EB%A5%98)" >상세보기 - WIKI 이동</a>
 - MyPageActivity.kt
 - 로그인한 이메일 계정 show
 - 로그아웃

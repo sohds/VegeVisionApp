@@ -40,7 +40,7 @@ Python으로 CNN 모델을 MobileNetV2로 전이학습시켜 신선한 농산물
   - DB에 있는 이메일과 패스워드일 경우, 로그인
   - 비밀번호가 틀렸을 경우, '비밀번호가 틀렸습니다.' 토스트 메시지 출력 (로그인 실패)
 
-#### 사진 분류
+#### 사진 분류 - <a href="https://github.com/sohds/VegeVisionApp/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(%EC%82%AC%EC%A7%84-%EB%B6%84%EB%A5%98)" >상세보기 - WIKI 이동</a>
 - MainActivity.kt, activity.xml (사진 업로드) / ResultActivity.kt, page_result.xml (결과)
 - 카메라에서 사진 업로드
 - 갤러리에서 사진 업로드
